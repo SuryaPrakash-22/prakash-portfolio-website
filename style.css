@@ -311,30 +311,35 @@ header ul a {
   font-weight: 700;
   
 }
-
-.info-card {
-    /* display: grid;
-    grid-template-columns: auto auto auto;
-    gap: 20px;
-    width: 100%;
-    height: 100%;
-    margin: 30px; */
-    display: flex;
-    flex-direction: column;
+.info-card-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns for the first three cards */
+    gap: 20px; /* Space between cards */
 }
-
 
 .card {
     display: flex;
+    flex-direction: column;
     align-items: flex-start;
     justify-content: center;
     position: relative;
-    /* width: auto; */
     height: 40vh;
     overflow: hidden;
     border: 1px solid gray;
     background-color: #080020b7;
     border-radius: 20px;
+    padding: 20px;
+}
+
+.card:nth-child(3) {
+    grid-column: span 1; /* Third card stays in its column */
+    height: 60vh; /* Increase height for the third card */
+}
+
+.card:nth-child(4) {
+    grid-column: span 3; /* Fourth card spans all three columns */
+    height: 60vh; /* Match the height of the third card */
+
 }
 
 .card img {
